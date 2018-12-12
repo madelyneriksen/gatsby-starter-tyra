@@ -5,9 +5,9 @@ Tyra is a Gatsby starter that focuses on legibility and a clean, feminine design
 
 ## TODO
 
-[] Convert sketch to React components
-[] Build blog index page
-[] Add Google Analytics Integration
-[] Add Mailchimp Integration
-[] Add Rich SEO Metadata
-[] Create Pagination/Category System
+- [ ] Convert sketch to React components
+- [ ] Build blog index page
+- [ ] Add Google Analytics Integration
+- [ ] Add Mailchimp Integration
+- [ ] Add Rich SEO Metadata
+- [ ] Create Pagination/Category System
