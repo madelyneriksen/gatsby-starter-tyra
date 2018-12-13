@@ -1,3 +1,8 @@
 import React from "react"
+import Layout from '../common/layouts';
 
-export default () => <div>Hey Tyra!</div>
+export default () => (
+  <Layout>
+    <div>Hey Tyra!</div>
+  </Layout>
+)
