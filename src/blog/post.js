@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../common/layouts';
 import Hero from './components/hero.js';
+import Body from './components/body.js';
 
 
 export default ({ data }) => {
@@ -8,6 +9,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <Hero author={author} date={date} category={category} title={title} />
+      <Body />
     </Layout>
   )
 }
