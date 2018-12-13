@@ -15,7 +15,9 @@ const MultiLink = (props) => {
 
 
 export default props => (
-  <div className="bg-white flex w-100 h3 pv3 flex justify-between items-center top-0" style={{position: "sticky"}}>
+  <div
+    className="bg-white flex w-100 h3 pv3 flex justify-between items-center top-0 z-999 bb b--light-gray"
+    style={{position: "sticky"}}>
     <StaticQuery
       query={graphql`
         query {
