@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../common/layouts';
+import Hero from './components/hero.js';
 
-export default ({ data }) => (
-  <Layout>
-    <div className="bg-washed-red ph2 pv5 flex flex-column justify-center items-center">
-      <Link href={"/" + data.post.frontmatter.category} className="sans-serif ttu mid-gray tracked f5">{data.post.frontmatter.category}</Link>
-      <h1 className="dark-gray display fw4 f1-l f2 tc">{data.post.frontmatter.title}</h1>
-      <span className="sans-serif tracked ttu f5 mb2">by {data.post.frontmatter.author}</span>
-      <span className="sans-serif tracked ttu f5">{data.post.frontmatter.date}</span>
-    </div>
-  </Layout>
-)
+
+export default ({ data }) => {
+  const {category, date, author, title} = data.post.frontmatter;
+  return (
+    <Layout>
+      <Hero author={author} date={date} category={category} title={title} />
+    </Layout>
+  )
+}
+
 
 export const query = graphql`
   query($slug: String!) {
