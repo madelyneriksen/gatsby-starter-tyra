@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    navbarLinks: [],
+    navbarLinks: [
+      {to: "#", name: "makeup"},
+      {to: "#", name: "style"},
+      {to: "#", name: "blog"},
+    ],
     siteTitle: "TYRA",
   },
   plugins: [
