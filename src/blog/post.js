@@ -2,14 +2,16 @@ import React from 'react';
 import Layout from '../common/layouts';
 import Hero from './components/hero.js';
 import Body from './components/body.js';
+import { graphql } from 'gatsby';
 
 
 export default ({ data }) => {
   const {category, date, author, title} = data.post.frontmatter;
+  const content = data.post.html;
   return (
     <Layout>
       <Hero author={author} date={date} category={category} title={title} />
-      <Body />
+      <Body content={content} />
     </Layout>
   )
 }
