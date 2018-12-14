@@ -6,6 +6,7 @@ module.exports = {
       {to: "#", name: "blog"},
     ],
     siteTitle: "TYRA",
+    baseURL: "https://tyra-starter.netlify.com"
   },
   plugins: [
     'gatsby-plugin-react-helmet',

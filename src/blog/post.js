@@ -2,14 +2,30 @@ import React from 'react';
 import Layout from '../common/layouts';
 import Hero from './components/hero.js';
 import Body from './components/body.js';
+import Seo from './seo.js';
 import { graphql } from 'gatsby';
 
 
 export default ({ data }) => {
-  const {category, date, author, title} = data.post.frontmatter;
+  const {
+    category,
+    date,
+    dateOriginal,
+    author,
+    title,
+    slug,
+    metaDescription
+  } = data.post.frontmatter;
   const content = data.post.html;
   return (
     <Layout>
+      <Seo
+        slug={slug}
+        title={title}
+        date={dateOriginal}
+        description={metaDescription}
+        author={author}
+        image={data.post.frontmatter.postImage.childImageSharp.original.src} />
       <Hero author={author} date={date} category={category} title={title} />
       <Body content={content} />
     </Layout>
@@ -23,6 +39,7 @@ export const query = graphql`
       html
       frontmatter {
         date(formatString: "MMM Do, YYYY")
+        dateOriginal: date
         category
         author
         title
