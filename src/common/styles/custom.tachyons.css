@@ -9,3 +9,9 @@
 .display {
   font-family: "Playfair Display", serif;
 }
+
+@media screen and (min-width: 60em) {
+  .tl-75-l {
+    transform: translateY(-75%);
+  }
+}
