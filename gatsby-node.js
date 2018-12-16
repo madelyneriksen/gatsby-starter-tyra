@@ -8,7 +8,7 @@ exports.createPages = ({ graphql, actions}) => {
       graphql(
         `
           {
-            allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}) {
+            allPosts: allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}) {
               edges {
                 node {
                   frontmatter {
@@ -23,9 +23,9 @@ exports.createPages = ({ graphql, actions}) => {
         if (result.errors) {
           reject(result.errors)
         }
-
+        // Create all the blog post pages.
         const template = path.resolve('src/blog/post.js');
-        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        result.data.allPosts.edges.forEach(({ node }) => {
           let slug = node.frontmatter.slug;
           createPage({
             path: slug,

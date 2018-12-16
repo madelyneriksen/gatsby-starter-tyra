@@ -11,7 +11,10 @@ export default props => (
     <StaticQuery
       query={graphql`
         query {
-          allMarkdownRemark(limit: 2, sort: {order: DESC, fields: frontmatter___date}) {
+          allMarkdownRemark(
+            limit: 2,
+            sort: {order: DESC, fields: frontmatter___date},
+            filter: {frontmatter: {type: {eq: "post"}}}) {
             edges {
               node {
                 frontmatter {
