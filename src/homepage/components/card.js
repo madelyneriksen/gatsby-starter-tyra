@@ -14,7 +14,7 @@ export default (props) => (
       {props.description} 
     </div>
     <div className="pa2 flex justify-end serif h3">
-      <Link to={props.to} className="dark-gray tracked ttu sans-serif f5">Read It &raquo;</Link>
+      <Link to={props.to} className="dark-gray tracked ttu sans-serif f5">Read More &raquo;</Link>
     </div>
   </div>
 )

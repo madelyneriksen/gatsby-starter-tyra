@@ -3,6 +3,7 @@ import Layout from '../common/layouts';
 import { graphql } from 'gatsby';
 import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
+import About from '../homepage/components/about';
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
@@ -22,6 +23,7 @@ export default ({ data }) => {
             description={node.frontmatter.description} />
         ))}
       </div>
+      <About />
     </Layout>
   )
 }
