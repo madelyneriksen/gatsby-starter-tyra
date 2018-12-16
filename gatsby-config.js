@@ -6,7 +6,9 @@ module.exports = {
       {to: "#", name: "blog"},
     ],
     siteTitle: "TYRA",
-    baseURL: "https://tyra-starter.netlify.com"
+    baseURL: "https://tyra-starter.netlify.com",
+    homepageHeader: "Welcome to Your New Blog",
+    homepageAbout: "Tyra is a modern, sleek and feminine Gatsby.js theme. Easily create a beautiful and fast blog and draw attention to your stellar content."
   },
   plugins: [
     'gatsby-plugin-react-helmet',
