@@ -2,27 +2,57 @@ import React from "react"
 import Layout from '../common/layouts';
 import { graphql } from 'gatsby';
 import Hero from '../homepage/components/hero';
+import Card from '../homepage/components/card';
 
 export default ({ data }) => {
-  const post = data.post.edges[0].node;
+  let post = data.featuredPost.edges[0].node;
   return (
     <Layout>
       <Hero
         title={post.frontmatter.title}
         image={post.frontmatter.postImage.childImageSharp.fluid}
+        to={post.frontmatter.slug}
         description={post.frontmatter.description} />
+      <div className="flex flex-wrap center mw9 justify-around">
+        {data.cards.edges.map(({node}) => (
+          <Card
+            title={node.frontmatter.title}
+            image={node.frontmatter.postImage.childImageSharp.fluid}
+            to={node.frontmatter.slug}
+            description={node.frontmatter.description} />
+        ))}
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    post: allMarkdownRemark(limit: 1, sort: {order: DESC, fields: frontmatter___date}) {
+    featuredPost: allMarkdownRemark(limit: 1, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           frontmatter {
             title
             description: metaDescription
+            slug
+            postImage {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    cards: allMarkdownRemark(skip: 1, limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description: metaDescription
+            slug
             postImage {
               childImageSharp {
                 fluid(maxWidth: 1920) {
