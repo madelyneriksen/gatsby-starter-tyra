@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
 import About from '../homepage/components/about';
+import Bio from '../homepage/components/bio';
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
@@ -14,7 +15,7 @@ export default ({ data }) => {
         image={post.frontmatter.postImage.childImageSharp.fluid}
         to={post.frontmatter.slug}
         description={post.frontmatter.description} />
-      <div className="flex flex-wrap center mw9 justify-around">
+      <div className="flex flex-wrap center mw9 justify-around pb3">
         {data.cards.edges.map(({node}) => (
           <Card
             title={node.frontmatter.title}
@@ -24,13 +25,17 @@ export default ({ data }) => {
         ))}
       </div>
       <About />
+      <Bio />
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    featuredPost: allMarkdownRemark(limit: 1, sort: {order: DESC, fields: frontmatter___date}) {
+    featuredPost: allMarkdownRemark(
+      limit: 1,
+      sort: {order: DESC, fields: frontmatter___date},
+      filter: {frontmatter: {type: {eq: "post"}}}) {
       edges {
         node {
           frontmatter {
@@ -48,7 +53,11 @@ export const query = graphql`
         }
       }
     }
-    cards: allMarkdownRemark(skip: 1, limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
+    cards: allMarkdownRemark(
+      skip: 1,
+      limit: 3,
+      sort: {order: DESC, fields: frontmatter___date},
+      filter: {frontmatter: {type: {eq: "post"}}}) {
       edges {
         node {
           frontmatter {
