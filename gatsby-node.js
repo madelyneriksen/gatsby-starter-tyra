@@ -8,7 +8,10 @@ exports.createPages = ({ graphql, actions}) => {
       graphql(
         `
           {
-            allPosts: allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}}}) {
+            allPosts: allMarkdownRemark(
+            filter: {frontmatter: {type: {eq: "post"}}},
+            sort: {fields: frontmatter___date, order: DESC},
+            ) {
               edges {
                 node {
                   frontmatter {
@@ -23,9 +26,24 @@ exports.createPages = ({ graphql, actions}) => {
         if (result.errors) {
           reject(result.errors)
         }
+        const allPosts = result.data.allPosts.edges;
+        const paginationTemplate = path.resolve('src/blog/index.js');
+        const postsPerPage = 2;
+        const numPages = Math.ceil(allPosts.length / postsPerPage);
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+            component: paginationTemplate,
+            context: {
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              nextPage: `/blog/${i + 2}`,
+            }
+          })
+        })
         // Create all the blog post pages.
         const template = path.resolve('src/blog/post.js');
-        result.data.allPosts.edges.forEach(({ node }) => {
+        allPosts.forEach(({ node }) => {
           let slug = node.frontmatter.slug;
           createPage({
             path: slug,
