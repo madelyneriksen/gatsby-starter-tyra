@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Navbar from '../components/navbar.js'
+import Navbar from '../components/navbar.js';
+import Footer from '../components/footer.js';
 import 'tachyons';
 import '../styles/custom.tachyons.css';
 
@@ -12,5 +13,6 @@ export default (props) => (
     </Helmet>
     <Navbar />
     {props.children}
+    <Footer />
   </React.Fragment>
 )
