@@ -10,7 +10,7 @@ export default props => (
           site {
             siteMetadata {
               siteTitle
-              baseURL
+              siteUrl
             }
           }
         }
@@ -23,10 +23,10 @@ export default props => (
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "${data.site.siteMetadata.baseURL}${props.slug}"
+              "@id": "${data.site.siteMetadata.siteUrl}${props.slug}"
             },
             "headline": "${props.title}",
-            "image": ["${data.site.siteMetadata.baseURL}${props.image}"],
+            "image": ["${data.site.siteMetadata.siteUrl}${props.image}"],
             "datePublished": "${props.date}",
             "dateModified": "${props.date}",
             "author": {
@@ -38,7 +38,7 @@ export default props => (
               "name": "${data.site.siteMetadata.siteTitle}",
               "logo": {
                 "@type": "ImageObject",
-                "url": "${data.site.siteMetadata.baseURL}/logo.png"
+                "url": "${data.site.siteMetadata.siteUrl}/logo.png"
               }
             },
             "description": "${props.description}"

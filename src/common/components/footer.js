@@ -45,7 +45,7 @@ export default () => (
         <div className="w-100 mw9 center silver mb3">
           <div className="w-100 bb b--mid-gray mv3"></div>
           <div className="flex w-100 mw6 items-center justify-center justify-start-ns">
-            <Link to="/" className="silver sans-serif f5 tracked pv1 db mh1">SITEMAP</Link>
+            <a href="/sitemap.xml" className="silver sans-serif f5 tracked pv1 db mh1">SITEMAP</a>
             <span className="mh1">|</span>
             <Link to="/" className="silver sans-serif f5 tracked pv1 db mh1">PRIVACY</Link>
             <span className="mh1">|</span>
