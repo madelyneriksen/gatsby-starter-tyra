@@ -24,7 +24,7 @@ export default class BlogIndex extends React.Component {
                     className="dark-gray no-underline"
                     to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
                 </span>
-                <div className="mt3 mb5 flex justify-between">
+                <div className="mv3 mb5-ns flex justify-between">
                   <div className="db f5 ttu tracked sans-serif">{node.frontmatter.date}</div>
                   <div className="db f5 ttu tracked sans-serif">TAGGED: {node.frontmatter.category}</div>
                 </div>
