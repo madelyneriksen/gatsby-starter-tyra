@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions}) => {
         }
         const allPosts = result.data.allPosts.edges;
         const paginationTemplate = path.resolve('src/blog/index.js');
-        const postsPerPage = 2;
+        const postsPerPage = 10;
         const numPages = Math.ceil(allPosts.length / postsPerPage);
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
@@ -38,6 +38,7 @@ exports.createPages = ({ graphql, actions}) => {
               limit: postsPerPage,
               skip: i * postsPerPage,
               nextPage: `/blog/${i + 2}`,
+              pageNumber: i + 1,
             }
           })
         })

@@ -11,11 +11,25 @@ export default class BlogIndex extends React.Component {
     const hasNext = this.props.data.posts.pageInfo.hasNextPage;
     return (
       <Layout>
+        <div className="pv5 flex items-center justify-center bg-washed-red">
+          <h1 className="fw1 tc f2 display">All Blog Posts</h1>
+        </div>
         <div className="mw9 center">
+          <div className="w-100 pv3 flex items-center tracked ttu sans-serif justify-around mw5">
+            <Link
+              to="/"
+              className="dark-gray">Home</Link>
+            <span>&nbsp;>&nbsp;</span>
+            <Link
+              to="/blog"
+              className="dark-gray">Blog</Link>
+            <span>&nbsp;>&nbsp;</span>
+            <span className="mid-gray">Page {this.props.pageContext.pageNumber}</span>
+          </div>
           {posts.map(({node}) => (
-            <div className="pv5 flex justify-around items-center flex-wrap">
+            <div className="pv3 flex justify-center items-center flex-wrap">
               <Img
-                className="w-100 mw7 h-100"
+                className="w-100 mw6 h-100"
                 fluid={node.frontmatter.postImage.childImageSharp.fluid}
                 alt="" />
               <div className="mw7 pa2 ph4-ns">
