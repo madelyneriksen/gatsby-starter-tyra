@@ -10,6 +10,14 @@
   font-family: "Playfair Display", serif;
 }
 
+.h0 {
+  height: 0;
+}
+
+.ease {
+  transition: all .4s ease;
+}
+
 @media screen and (min-width: 60em) {
   .tl-75-l {
     transform: translateY(-75%);

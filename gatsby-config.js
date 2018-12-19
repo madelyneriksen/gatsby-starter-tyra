@@ -3,7 +3,7 @@ module.exports = {
     navbarLinks: [
       {to: "#", name: "makeup"},
       {to: "#", name: "style"},
-      {to: "#", name: "blog"},
+      {to: "/blog", name: "blog"},
     ],
     title: "TYRA",
     description: "Tyra is a fast, feminine, and chic Gatsby.js theme.",
