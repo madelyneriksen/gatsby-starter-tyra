@@ -14,7 +14,7 @@ export default () => (
       query {
         site {
           siteMetadata {
-            siteTitle
+            siteTitle: title
           }
         }
       } 
@@ -47,7 +47,7 @@ export default () => (
           <div className="flex w-100 mw6 items-center justify-center justify-start-ns">
             <a href="/sitemap.xml" className="silver sans-serif f5 tracked pv1 db mh1">SITEMAP</a>
             <span className="mh1">|</span>
-            <Link to="/" className="silver sans-serif f5 tracked pv1 db mh1">PRIVACY</Link>
+            <Link to="/privacy" className="silver sans-serif f5 tracked pv1 db mh1">PRIVACY</Link>
             <span className="mh1">|</span>
             <a href="https://github.com/madelyneriksen/gatsby-starter-tyra" className="silver sans-serif f5 tracked pv1 db mh1">THEME</a>
           </div>

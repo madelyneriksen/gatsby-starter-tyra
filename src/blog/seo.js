@@ -9,7 +9,7 @@ export default props => (
         query {
           site {
             siteMetadata {
-              siteTitle
+              siteTitle: title
               siteUrl
             }
           }

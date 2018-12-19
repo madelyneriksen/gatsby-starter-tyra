@@ -27,7 +27,7 @@ export default props => (
                 to
                 name
               }
-              siteTitle
+              siteTitle: title
             }
           }
         }  

@@ -5,7 +5,7 @@ module.exports = {
       {to: "#", name: "style"},
       {to: "#", name: "blog"},
     ],
-    siteTitle: "TYRA",
+    title: "TYRA",
     siteUrl: "https://tyra-starter.netlify.com",
     homepageHeader: "Welcome to Your New Blog",
     homepageAbout: "Tyra is a modern, sleek and feminine Gatsby.js theme. Easily create a beautiful and fast blog and draw attention to your stellar content."
