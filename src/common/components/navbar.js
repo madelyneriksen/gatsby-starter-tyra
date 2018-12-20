@@ -15,32 +15,42 @@ const MultiLink = (props) => {
   return result;
 }
 
-const SliderMenu = (props) => (
-  <div
-    className={
-      "flex flex-column justify-center items-center bg-washed-red fixed top z-max w-100 ease" + (props.active ? " vh-100" : " h0")
-    }>
-    <Link
-      to="/"
-      className={"display ttu tracked dark-gray f4 no-underline" + (props.active ? " db" : " dn")}
+const SliderMenu = (props) => {
+  // Prevents a flash of visible menu items when the entrance is triggered
+  let extraClasses;
+  if (props.active === null) {
+    extraClasses = " dn";
+  } else {
+    extraClasses = (props.active ? " fadeIn" : " fadeOut");
+  }
+  return (
+    <div
+      className={
+        "flex flex-column justify-center items-center bg-washed-red fixed top z-max w-100 ease" + (props.active ? " vh-93" : " h0")
+      }>
+      <Link
+        to="/"
+        className={"display ttu tracked dark-gray f3 no-underline menu__item pv5" + extraClasses}
       >{props.siteTitle}
-    </Link>
-    {props.extraLinks.map(navLink => (
-      <MultiLink
-        to={navLink.to}
-        className={"sans-serif ttu mid-gray f5 no-underline ease" + (props.active ? " db" : " dn")}
+      </Link>
+      {props.extraLinks.map(navLink => (
+        <MultiLink
+          to={navLink.to}
+          className={"sans-serif ttu mid-gray f5 no-underline menu__item pv3" + extraClasses}
         >{navLink.name}
-      </MultiLink>
-    ))}
-  </div>
-)
+        </MultiLink>
+      ))}
+    </div>
+  )
+}
 
 
 export default class Navbar extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      menuToggle: false,
+      // Null rather than false to check for initialization
+      menuToggle: null,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   };
@@ -70,7 +80,7 @@ export default class Navbar extends React.Component {
       render={data => (
         <React.Fragment>
           <div
-            className="bg-white flex w-100 h3 pv3 flex justify-between items-center top-0 z-999 bb b--light-gray"
+            className="bg-white flex w-100 vh-7 pv3 flex justify-between items-center top-0 z-999 bb b--light-gray"
             style={{position: "sticky"}}>
             <div className="w-100 mw8 flex justify-between justify-around-l items-center ph4 pa2-ns">
               <button

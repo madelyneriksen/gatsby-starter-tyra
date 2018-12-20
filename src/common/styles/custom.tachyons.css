@@ -14,12 +14,61 @@
   height: 0;
 }
 
+.w0 {
+  width: 0;
+}
+
+.vh-7 {height: 7vh;}
+.vh-93 {height: 93vh;}
+
 .ease {
   transition: all .4s ease;
 }
 
+.fadeIn {
+  animation: fadeIn .4s normal forwards;
+}
+
+.fadeOut {
+  animation: fadeOut .2s normal forwards;
+}
+
+.menu__item { visibility: none; }
+
 @media screen and (min-width: 60em) {
   .tl-75-l {
     transform: translateY(-75%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
   }
 }
