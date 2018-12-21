@@ -1,9 +1,9 @@
 .sans-serif {
-  font-family: "Karla", sans-serif;
+  font-family: "Karla", sans-serif !important;
 }
 
 .serif {
-  font-family: "Lora", serif;
+  font-family: "Lora", serif !important;
 }
 
 .display {
@@ -71,4 +71,49 @@
     visibility: hidden;
     opacity: 0;
   }
+}
+
+/* Article Styles */
+
+/* Rhythm */
+.article__container p {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  line-height: 1.6em;
+}
+
+
+/* Styles for quotes */
+.article__container blockquote {
+  font-style: italic;
+  text-align: center;
+  padding: 0px;
+}
+
+/* Styles for links */
+.article__container a {
+  color: #ff725c;
+  text-decoration: none;
+}
+
+.article__container a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for headerss */
+.article__container h1,
+.article__container h2,
+.article__container h3,
+.article__container h4,
+.article__container h5,
+.article__container h6 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+}
+
+.article__container pre {
+  padding: .5rem;
+  font-size: 1rem;
+  background-color: #eee;
+  white-space: pre-wrap;
 }

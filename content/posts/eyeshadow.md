@@ -17,7 +17,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id varius vel
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla et erat at lorem convallis pulvinar. Vivamus ac dui neque. Etiam non venenatis eros. Nulla tincidunt vulputate lectus, non placerat nisl viverra id. Donec ac dapibus mi, a auctor urna. Sed elit neque, accumsan in felis eget, varius hendrerit nisl. Quisque urna sem, posuere sit amet porta sit amet, fringilla a quam. Ut aliquet maximus ligula, vitae fermentum nunc rhoncus non. Nullam nec augue sapien. Nulla sed vulputate orci. Vivamus ipsum ipsum, viverra quis tincidunt sed, consectetur ut erat.
 
+## A Sweet Header
+
+This section is going to have some awesome sample content for judging markdown typography.
+
+Here comes a sweet blockquote:
+
+> The trick to amazing eyeshadow is using great colors.
+
+That's looking decent! Sweet.
+
 Vestibulum vitae neque a velit efficitur tempor eget eu urna. Praesent et purus sollicitudin, pretium dolor non, laoreet lectus. Donec nisi sem, laoreet quis pulvinar eu, eleifend ac dui. Integer vehicula non turpis a vestibulum. Nulla facilisi. Donec lobortis, ante vitae maximus consectetur, odio augue tempor mi, at vehicula purus orci sed sapien. Maecenas cursus massa id orci fermentum laoreet. Duis elementum justo sit amet tellus dignissim tristique.
+
+#### Smaller Headers Work Too
+
+Let's try adding some links. Have you looked at the template author's [github lately](https://github.com/madelyneriksen)? She's always creating new stuff.
+
+Of course, we can also *emphasize* text with the **tools** markdown gives us.
+
+* There's some sweet features to markdown
+* Like Lists
+* and more lists
+
+```
+Prismjs isn't included
+
+But we can still have code blocks.
+```
 
 Pellentesque elit justo, viverra nec malesuada eu, dictum id urna. Vivamus et purus nunc. Cras sed massa dignissim, egestas orci ac, molestie purus. Aliquam iaculis neque diam, sed vulputate mauris blandit sit amet. Aenean eu ligula in nunc consequat porta. Nunc efficitur sem eget ante venenatis, ac luctus velit venenatis. Quisque cursus ante vel ligula hendrerit, vel condimentum mi pellentesque. Sed ut felis in odio facilisis maximus. Curabitur ut lacus nisl. Sed rutrum ornare elementum. Pellentesque et velit ullamcorper, lobortis urna at, congue massa. Nulla suscipit congue aliquet. Sed urna augue, ullamcorper tempor pharetra eget, mollis a quam. Cras rhoncus sagittis augue vel lacinia.
 
