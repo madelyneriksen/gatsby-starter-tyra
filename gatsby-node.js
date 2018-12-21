@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions}) => {
         const allPosts = result.data.allPosts.edges;
         const groupedPosts = result.data.allPosts.group;
         const paginationTemplate = path.resolve('src/blog/index.js');
-        const postsPerPage = 1;
+        const postsPerPage = 10;
         let numPages = Math.ceil(allPosts.length / postsPerPage);
 
         // Creating the main blog index
