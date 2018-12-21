@@ -40,6 +40,10 @@ const SliderMenu = (props) => {
         >{navLink.name}
         </MultiLink>
       ))}
+      <Link
+        to="/about"
+        className={"sans-serif ttu mid-gray f5 no-underline menu__item pv3" + extraClasses}
+      >About</Link>
     </div>
   )
 }
@@ -75,7 +79,7 @@ export default class Navbar extends React.Component {
               siteTitle: title
             }
           }
-        }  
+        }
       `}
       render={data => (
         <React.Fragment>
