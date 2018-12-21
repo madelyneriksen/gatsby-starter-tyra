@@ -100,7 +100,7 @@
   text-decoration: underline;
 }
 
-/* Styles for headerss */
+/* Styles for headers */
 .article__container h1,
 .article__container h2,
 .article__container h3,
@@ -111,6 +111,7 @@
   font-weight: 600;
 }
 
+/* Styles for code */
 .article__container pre {
   padding: .5rem;
   font-size: 1rem;
