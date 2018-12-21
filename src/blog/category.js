@@ -10,15 +10,16 @@ export default class BlogIndex extends React.Component {
   render() {
     const posts = this.props.data.posts.edges;
     const hasNext = this.props.data.posts.pageInfo.hasNextPage;
+    const category = this.props.pageContext.category;
     return (
       <Layout>
         <div className="pv5 flex items-center justify-center bg-washed-red">
-          <h1 className="fw1 tc f2 display">All Blog Posts</h1>
+          <h1 className="fw1 tc f2 display">Posts Tagged {category}</h1>
         </div>
         <div className="mw9 center">
           <Breadcrumbs
-            lastName="Blog"
-            lastPath="/blog"
+            lastName={category}
+            lastPath={`${category}`}
             currentPage={`Page ${this.props.pageContext.pageNumber}`} />
           {posts.map(({node}) => (
             <Preview
@@ -44,9 +45,9 @@ export default class BlogIndex extends React.Component {
 
 
 export const blogListQuery = graphql`
-  query posts($skip: Int!, $limit: Int!) {
+  query categoryPosts($skip: Int!, $limit: Int!, $category: String!) {
     posts: allMarkdownRemark(
-      filter: {frontmatter: {type: {eq: "post"}}},
+      filter: {frontmatter: {type: {eq: "post"}, category: {eq: $category}}},
       sort: {fields: frontmatter___date, order: DESC},
       limit: $limit,
       skip: $skip,

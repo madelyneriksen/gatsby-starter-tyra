@@ -19,6 +19,16 @@ exports.createPages = ({ graphql, actions}) => {
                   }
                 }
               }
+              group(field: frontmatter___category) {
+                fieldValue
+                edges {
+                  node {
+                    frontmatter {
+                      slug
+                    }
+                  }
+                }
+              }
             }
           }
         `
@@ -27,9 +37,12 @@ exports.createPages = ({ graphql, actions}) => {
           reject(result.errors)
         }
         const allPosts = result.data.allPosts.edges;
+        const groupedPosts = result.data.allPosts.group;
         const paginationTemplate = path.resolve('src/blog/index.js');
-        const postsPerPage = 10;
-        const numPages = Math.ceil(allPosts.length / postsPerPage);
+        const postsPerPage = 1;
+        let numPages = Math.ceil(allPosts.length / postsPerPage);
+
+        // Creating the main blog index
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
             path: i === 0 ? '/blog' : `/blog/${i + 1}`,
@@ -42,6 +55,30 @@ exports.createPages = ({ graphql, actions}) => {
             }
           })
         })
+
+        // Creating all category pages.
+        let category;
+        let categoryPosts;
+        const categoryTemplate = path.resolve('src/blog/category.js');
+        groupedPosts.forEach((group, _) => {
+          category = group.fieldValue;
+          categoryPosts = group.edges;
+          numPages = Math.ceil(categoryPosts.length / postsPerPage);
+          Array.from({ length: numPages }).forEach((_, i) => {
+            createPage({
+              path: i === 0 ? `/${category}` : `/${category}/${i + 1}`,
+              component: categoryTemplate,
+              context: {
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                nextPage: `/${category}/${i + 2}`,
+                pageNumber: i + 1,
+                category: category,
+              }
+            })
+          })
+        })
+
         // Create all the blog post pages.
         const template = path.resolve('src/blog/post.js');
         allPosts.forEach(({ node }) => {
