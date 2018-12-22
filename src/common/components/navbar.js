@@ -99,9 +99,9 @@ export default class Navbar extends React.Component {
               ))}
             </div>
             <div className="dn w-100 mw5 flex-l justify-around items-center">
-              <Link href="/sign-up" className="sans-serif ttu light-red f5 no-underline dn dib-l">SIGN UP</Link>
+              <Link to="/sign-up" className="sans-serif ttu light-red f5 no-underline dn dib-l">SIGN UP</Link>
               <span className="sans-serif mid-gray dn dib-l">|</span>
-              <Link href="/about" className="sans-serif ttu mid-gray f5 no-underline dn dib-l">ABOUT</Link>
+              <Link to="/about" className="sans-serif ttu mid-gray f5 no-underline dn dib-l">ABOUT</Link>
             </div>
           </div>
           <SliderMenu
