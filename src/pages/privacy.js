@@ -61,14 +61,14 @@ export default () => (
       </ul>
       <h2 className="sans-serif">Security Of Data</h2>
       <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
-      <h2>Service Providers</h2>
+      <h2 className="sans-serif">Service Providers</h2>
       <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
       <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
-      <h3>Analytics</h3>
+      <h3 className="sans-serif">Analytics</h3>
       <p>We may use third-party Service Providers to monitor and analyze the use of our Service.</p>    
       <ul>
         <li>
-          <p><strong>Google Analytics</strong></p>
+          <p className="sans-serif"><strong>Google Analytics</strong></p>
           <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
           <p>You can opt-out of having made your activity on the Service available to Google Analytics by enabling "Do Not Track" in your browser.</p>
           <p>For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a className="light-red" href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a></p>
