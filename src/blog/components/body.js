@@ -13,7 +13,10 @@ export default props => (
       className="mw8 serif f4 lh-copy center pa2 article__container"
       style={{gridArea: "content"}}
       dangerouslySetInnerHTML={{__html: props.content}} />
-    <Sidebar />
+    <Sidebar
+      img={props.image}
+      desc={props.description}
+    />
     <Suggested />
   </div>
 )

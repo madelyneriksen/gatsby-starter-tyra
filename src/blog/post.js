@@ -27,7 +27,11 @@ export default ({ data }) => {
         author={author}
         image={data.post.frontmatter.postImage.childImageSharp.original.src} />
       <Hero author={author} date={date} category={category} title={title} />
-      <Body content={content} />
+      <Body
+        content={content}
+        description={metaDescription}
+        image={data.post.frontmatter.postImage.childImageSharp.original.src}
+      />
     </Layout>
   )
 }
