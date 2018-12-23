@@ -3,6 +3,7 @@ import Layout from '../common/layouts';
 import Hero from './components/hero.js';
 import Body from './components/body.js';
 import Seo from './seo.js';
+import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
 
 
@@ -26,6 +27,9 @@ export default ({ data }) => {
         description={metaDescription}
         author={author}
         image={data.post.frontmatter.postImage.childImageSharp.original.src} />
+      <MetaSeo
+        title={title}
+        description={metaDescription} />
       <Hero author={author} date={date} category={category} title={title} />
       <Body
         content={content}

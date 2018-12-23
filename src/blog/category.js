@@ -3,6 +3,7 @@ import Layout from '../common/layouts';
 import { Link, graphql } from 'gatsby';
 import Breadcrumbs from './components/breadcrumbs';
 import Preview from './components/post-preview.js';
+import Seo from '../common/seo';
 import 'tachyons';
 
 
@@ -13,6 +14,8 @@ export default class BlogIndex extends React.Component {
     const category = this.props.pageContext.category;
     return (
       <Layout>
+        <Seo
+          title={`Posts Tagged ${category} - Page ${this.props.pageContext.pageNumber}`} />
         <div className="pv5 flex items-center justify-center bg-washed-red">
           <h1 className="fw1 tc f2 display">Posts Tagged {category}</h1>
         </div>
