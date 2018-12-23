@@ -3,7 +3,7 @@ import Sidebar from "./sidebar.js";
 import Suggested from './suggested.js';
 import "tachyons";
 import "../../common/styles/custom.tachyons.css";
-import "../styles/grid.css"; 
+import "../styles/grid.css";
 
 
 export default props => (
@@ -16,6 +16,7 @@ export default props => (
     <Sidebar
       img={props.image}
       desc={props.description}
+      location={props.location}
     />
     <Suggested />
   </div>

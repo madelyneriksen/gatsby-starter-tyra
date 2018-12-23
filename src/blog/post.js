@@ -7,7 +7,7 @@ import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
 
 
-export default ({ data }) => {
+export default ({location, data }) => {
   const {
     category,
     date,
@@ -35,6 +35,7 @@ export default ({ data }) => {
         content={content}
         description={metaDescription}
         image={data.post.frontmatter.postImage.childImageSharp.original.src}
+        location={location}
       />
     </Layout>
   )
