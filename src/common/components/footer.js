@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import {
   FaPinterestP,
-  FaFacebookF
+  FaFacebookF,
+  FaTwitter
 } from 'react-icons/fa';
-import {FiMail} from 'react-icons/fi'
 import 'tachyons';
 
 
@@ -15,6 +15,10 @@ export default () => (
         site {
           siteMetadata {
             siteTitle: title
+            mailChimpUrl
+            pinterest
+            facebook
+            twitter
           }
         }
       } 
@@ -26,20 +30,20 @@ export default () => (
             <span className="display f2">{data.site.siteMetadata.siteTitle}</span>
             <hr />
             <div className="w-100 flex justify-around items-center pv2">
-              <span><FaFacebookF /></span>
-              <span><FaPinterestP /></span>
-              <span><FiMail /></span>
+              <a className="near-white" href={data.site.siteMetadata.facebook}><FaFacebookF /></a>
+              <a className="near-white" href={data.site.siteMetadata.pinterest}><FaPinterestP /></a>
+              <a className="near-white" href={data.site.siteMetadata.twitter}><FaTwitter /></a>
             </div>
           </div>
           <div className="flex flex-column">
             <span className="near-white sans-serif f5 tracked mb3 db">WRITING BY {data.site.siteMetadata.siteTitle}</span>
             <Link to="/blog" className="near-white sans-serif f5 tracked pv1 db">ALL POSTS</Link>
-            <Link to="#" className="near-white sans-serif f5 tracked pv1 db">RSS FEED</Link>
+            <Link to="/rss.xml" className="near-white sans-serif f5 tracked pv1 db">RSS FEED</Link>
           </div>
           <div className="flex flex-column">
             <span className="near-white sans-serif f5 tracked mb3 db">MORE ON {data.site.siteMetadata.siteTitle}</span>
             <Link to="/about" className="near-white sans-serif f5 tracked pv1 db">ABOUT US</Link>
-            <Link to="#" className="near-white sans-serif f5 tracked pv1 db">NEWS LETTER</Link>
+            <a href={data.site.siteMetadata.mailChimpUrl} className="near-white sans-serif f5 tracked pv1 db">NEWS LETTER</a>
           </div>
         </div>
         <div className="w-100 mw9 center silver mb3">
