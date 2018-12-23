@@ -13,7 +13,7 @@ export default ({ data }) => {
     <Layout>
       <Seo
         title={"Home Page"}
-        description={data.site.siteMetadata.homepageAbout} />
+        description={data.site.siteMetadata.description} />
       <Hero
         title={post.frontmatter.title}
         image={post.frontmatter.postImage.childImageSharp.fluid}
@@ -81,7 +81,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
-        homepageAbout
+        description
       }
     }
   }
