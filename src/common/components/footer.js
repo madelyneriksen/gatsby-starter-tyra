@@ -3,7 +3,9 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import {
   FaPinterestP,
   FaFacebookF,
-  FaTwitter
+  FaTwitter,
+  FaYoutube,
+  FaGithub
 } from 'react-icons/fa';
 import 'tachyons';
 
@@ -19,6 +21,8 @@ export default () => (
             pinterest
             facebook
             twitter
+            youtube
+            github
           }
         }
       } 
@@ -29,10 +33,48 @@ export default () => (
           <div className="w-100 mw5 mb4">
             <span className="display f2">{data.site.siteMetadata.siteTitle}</span>
             <hr />
-            <div className="w-100 flex justify-around items-center pv2">
-              <a className="near-white" href={data.site.siteMetadata.facebook}><FaFacebookF /></a>
-              <a className="near-white" href={data.site.siteMetadata.pinterest}><FaPinterestP /></a>
-              <a className="near-white" href={data.site.siteMetadata.twitter}><FaTwitter /></a>
+              <div className="w-100 flex justify-around items-center pv2">
+              {data.site.siteMetadata.facebook && (
+                <a
+                  className="near-white"
+                  href={data.site.siteMetadata.facebook}
+                >
+                  <FaFacebookF />
+                </a>
+              )}
+
+              {data.site.siteMetadata.youtube && (
+                <a
+                  className="near-white"
+                  href={data.site.siteMetadata.youtube}
+                >
+                  <FaYoutube />
+                </a>
+              )}
+
+              {data.site.siteMetadata.github && (
+                <a
+                  className="near-white"
+                  href={data.site.siteMetadata.github}
+                >
+                  <FaGithub />
+                </a>
+              )}
+
+              {data.site.siteMetadata.pinterest && (
+                <a
+                  className="near-white"
+                  href={data.site.siteMetadata.pinterest}
+                >
+                  <FaPinterestP />
+                </a>
+              )}
+
+              {data.site.siteMetadata.twitter && (
+                <a className="near-white" href={data.site.siteMetadata.twitter}>
+                  <FaTwitter />
+                </a>
+              )}
             </div>
           </div>
           <div className="flex flex-column">
