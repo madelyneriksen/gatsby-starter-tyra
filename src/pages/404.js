@@ -9,7 +9,7 @@ export default ({props, data}) => (
   <Layout>
     <Seo
       title={`About ${data.site.siteMetadata.title}`}
-      description={data.markdownRemark.frontmatter.title} />
+      description={data.site.siteMetadata.description} />
  
     <div className="mw9 center flex flex-wrap pv5-l w-100">
       <div className="mw7 w-100 pa2">
@@ -31,20 +31,8 @@ export const dataQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
-      }
-    }
-    markdownRemark(frontmatter: {name: {eq: "about__bio"}}) {
-      html
-      frontmatter {
-        title
-      }
-    }
-    banner: file(relativePath: {eq: "img/about__banner.jpg"}) {
-      childImageSharp {
-        fluid(maxHeight: 720, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
+        title,
+        description
       }
     }
   }`
