@@ -34,18 +34,18 @@ This is used for configuring data across the site, improving SEO, and increasing
 
 Next up, you can begin customizing the images and copy in `content/`. Finally, you can add your own blog posts! Posts are written in Markup, an easy way to create webpages.
 
-# Installation with `gatsby-cli`
+## Installation with `gatsby-cli`
 `gatsby new my-site https://github.com/madelyneriksen/gatsby-starter-tyra`
 
-# Installation with `git clone`
+## Installation with `git clone`
 `git clone my-site git@github.com:madelyneriksen/gatsby-starter-tyra.git`
 `cd my-site`
 `yarn install`
 
-# To develop
+## To develop
 `yarn develop`
 
-# To build
+## To build
 `yarn build`
 
 
