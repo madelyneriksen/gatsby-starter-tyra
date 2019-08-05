@@ -6,7 +6,6 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve"
   },
   "dependencies": {
@@ -29,7 +28,5 @@
     "react-icons": "^3.5.0",
     "tachyons": "^4.11.1"
   },
-  "devDependencies": {
-    "prettier": "^1.17.0"
-  }
+  "devDependencies": {}
 }
