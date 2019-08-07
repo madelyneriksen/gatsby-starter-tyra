@@ -38,7 +38,7 @@ Next up, you can begin customizing the images and copy in `content/`. Finally, y
 `gatsby new my-site https://github.com/madelyneriksen/gatsby-starter-tyra`
 
 ## Installation with `git clone`
-`git clone my-site git@github.com:madelyneriksen/gatsby-starter-tyra.git`
+`git clone git@github.com:madelyneriksen/gatsby-starter-tyra.git my-site`
 `cd my-site`
 `yarn install`
 
