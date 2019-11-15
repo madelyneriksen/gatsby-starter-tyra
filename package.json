@@ -12,7 +12,7 @@
     "gatsby": "^2.17.13",
     "gatsby-image": "^2.2.32",
     "gatsby-plugin-feed": "^2.3.21",
-    "gatsby-plugin-google-analytics": "^2.1.26",
+    "gatsby-plugin-google-analytics": "^2.1.27",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sharp": "^2.2.38",
     "gatsby-plugin-sitemap": "^2.2.20",
