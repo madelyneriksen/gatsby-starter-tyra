@@ -19,7 +19,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.1.30",
     "gatsby-remark-images": "^3.1.31",
-    "gatsby-source-filesystem": "^2.1.37",
+    "gatsby-source-filesystem": "^2.1.38",
     "gatsby-transformer-remark": "^2.6.36",
     "gatsby-transformer-sharp": "^2.3.5",
     "react": "^16.12.0",
