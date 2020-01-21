@@ -77,4 +77,69 @@ export const query = graphql`
   }
 `
 
-export default liveRemarkForm(Post, { queryName: `post` });
+const FormConfig = {
+  label: `Blog Post`,
+  queryName: `post`,
+  fields: [
+    {
+      label: `Title`,
+      name: `rawFrontmatter.title`,
+      description: `The title of your post.`,
+      component: `text`,  // A simple text input
+    },
+    {
+      label: `Post Image`,
+      name: `rawFrontmatter.postImage`,
+      component: `image`,
+      parse: filename => `./img/${filename}`, // function to convert uploaded images.
+      previewSrc: (formValues, { input }) => {
+        // Create a function for viewing previews.
+        const [_, field] = input.name.split(".");
+        const node = formValues.frontmatter[field];
+        const result = node ? node.childImageSharp.fluid.src : "";
+        return result;
+      },
+      uploadDir: () => `/content/posts/img/`,
+    },
+    {
+      label: `Author`,
+      name: `rawFrontmatter.author`,
+      description: `Your full name.`,
+      component: `text`,
+    },
+    {
+      label: `Date Published`,
+      name: `rawFrontmatter.date`,
+      description: `The date your post was published.`,
+      component: `date`,
+      dateFormat: `YYYY-MM-DD`,
+      timeFormat: false,
+    },
+    {
+      label: `Category`,
+      name: `rawFrontmatter.category`,
+      description: `The category of your post.`,
+      component: `text`,
+    },
+    {
+      label: `Post URL`,
+      name: `rawFrontmatter.slug`,
+      description: `The URL your post will be visible at.`,
+      component: `text`,
+    },
+    {
+      label: `SEO Description`,
+      name: `rawFrontmatter.metaDescription`,
+      description: `Description used for search engine results.`,
+      component: `text`,
+    },
+    {
+      label: `Content`,
+      name: `rawMarkdownContent`,
+      description: `Write your blog post here!`,
+      component: `markdown`,
+    },
+  ]
+};
+
+export default liveRemarkForm(Post, FormConfig);
