@@ -89,7 +89,13 @@ module.exports = {
       resolve: `gatsby-plugin-tinacms`,
       options: {
         plugins: [
-          `gatsby-tinacms-git`,
+          {
+            resolve: `gatsby-tinacms-git`,
+            options: {
+              defaultCommitMessage: `Custom Commit Message`,  // Change this!
+              pushOnCommit: false,
+            },
+          },
           `gatsby-tinacms-remark`,
         ]
       }
