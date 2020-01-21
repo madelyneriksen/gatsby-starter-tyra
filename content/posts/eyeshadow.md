@@ -4,7 +4,7 @@ type: post
 category: makeup
 date: '2018-01-03'
 slug: /lazy-morning-looks
-postImage: ./img/eyeshadow.jpg
+postImage: ./img/Screenshot from 2019-06-09 08-21-53.png
 metaDescription: Lazy Day? Here's three essential eye makeup techniques to hang on to.
 author: Madelyn Eriksen
 ---
