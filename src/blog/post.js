@@ -9,7 +9,7 @@ import { graphql } from 'gatsby';
 import { liveRemarkForm } from 'gatsby-tinacms-remark';
 
 
-const Post = ({ location, data }) => {
+const Post = ({ location, data, isEditing, setIsEditing }) => {
   const {
     category,
     date,
@@ -38,6 +38,8 @@ const Post = ({ location, data }) => {
         description={metaDescription}
         image={data.post.frontmatter.postImage.childImageSharp.original.src}
         location={location}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
       />
     </Layout>
   )
