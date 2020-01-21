@@ -6,8 +6,10 @@ import Seo from './seo.js';
 import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
 
+import { liveRemarkForm } from 'gatsby-tinacms-remark';
 
-export default ({location, data }) => {
+
+const Post = ({ location, data }) => {
   const {
     category,
     date,
@@ -65,6 +67,7 @@ export const query = graphql`
           }
         }
       }
+      ...TinaRemark
     }
     date: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
       frontmatter {
@@ -73,3 +76,5 @@ export const query = graphql`
     }
   }
 `
+
+export default liveRemarkForm(Post, { queryName: `post` });
