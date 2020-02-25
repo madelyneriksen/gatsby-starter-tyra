@@ -6,7 +6,7 @@ import Seo from './seo.js';
 import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
 
-import { liveRemarkForm } from 'gatsby-tinacms-remark';
+import { inlineRemarkForm } from 'gatsby-tinacms-remark';
 
 
 const Post = ({ location, data, isEditing, setIsEditing }) => {
@@ -144,4 +144,4 @@ const FormConfig = {
   ]
 };
 
-export default liveRemarkForm(Post, FormConfig);
+export default inlineRemarkForm(Post, FormConfig);
