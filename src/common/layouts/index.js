@@ -5,8 +5,11 @@ import Footer from '../components/footer.js';
 import 'tachyons';
 import '../styles/custom.tachyons.css';
 
+import { withPlugin } from 'tinacms';
+import CreatePostPlugin from '../../blog/plugins/postCreator';
 
-export default (props) => (
+
+const Layout = (props) => (
   <React.Fragment>
     <Helmet>
       <body className="bg-near-white mid-gray" />
@@ -16,3 +19,6 @@ export default (props) => (
     <Footer />
   </React.Fragment>
 )
+
+
+export default withPlugin(Layout, CreatePostPlugin);
