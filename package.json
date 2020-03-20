@@ -15,7 +15,7 @@
     "gatsby-plugin-google-analytics": "^2.1.38",
     "gatsby-plugin-react-helmet": "^3.1.24",
     "gatsby-plugin-sharp": "^2.4.13",
-    "gatsby-plugin-sitemap": "^2.2.30",
+    "gatsby-plugin-sitemap": "^2.3.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.1.40",
     "gatsby-remark-images": "^3.1.50",
