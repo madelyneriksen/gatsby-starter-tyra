@@ -18,7 +18,7 @@
     "gatsby-plugin-sitemap": "^2.4.4",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.3.4",
-    "gatsby-remark-images": "^3.3.9",
+    "gatsby-remark-images": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.10",
     "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.3.19",
