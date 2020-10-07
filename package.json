@@ -20,7 +20,7 @@
     "gatsby-remark-copy-linked-files": "^2.3.18",
     "gatsby-remark-images": "^3.3.32",
     "gatsby-source-filesystem": "^2.3.32",
-    "gatsby-transformer-remark": "^2.8.37",
+    "gatsby-transformer-remark": "^2.8.38",
     "gatsby-transformer-sharp": "^2.3.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
